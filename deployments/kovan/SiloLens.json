@@ -1,0 +1,368 @@
+{
+  "address": "0x83fDa0C6401A3615D59c3Ac46Cd3d211d2E088aA",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_assetTotalDeposits",
+          "type": "uint256"
+        },
+        {
+          "internalType": "contract IShareToken",
+          "name": "_shareToken",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        }
+      ],
+      "name": "balanceOfUnderlying",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract ISilo",
+          "name": "_silo",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_asset",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        }
+      ],
+      "name": "borrowShare",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract ISilo",
+          "name": "_silo",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_asset",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        }
+      ],
+      "name": "collateralBalanceOfUnderlying",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract ISilo",
+          "name": "_silo",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_asset",
+          "type": "address"
+        }
+      ],
+      "name": "collateralOnlyDeposits",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract ISilo",
+          "name": "_silo",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_asset",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        }
+      ],
+      "name": "debtBalanceOfUnderlying",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract ISilo",
+          "name": "_silo",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        }
+      ],
+      "name": "getUserLiquidationThreshold",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract ISilo",
+          "name": "_silo",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        }
+      ],
+      "name": "getUserMaximumLTV",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract ISilo",
+          "name": "_silo",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        }
+      ],
+      "name": "inDebt",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract ISilo",
+          "name": "_silo",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_asset",
+          "type": "address"
+        }
+      ],
+      "name": "protocolFees",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract ISilo",
+          "name": "_silo",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_asset",
+          "type": "address"
+        }
+      ],
+      "name": "totalBorrowAmount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract ISilo",
+          "name": "_silo",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_asset",
+          "type": "address"
+        }
+      ],
+      "name": "totalBorrowShare",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract ISilo",
+          "name": "_silo",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_asset",
+          "type": "address"
+        }
+      ],
+      "name": "totalDeposits",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x98392fadc3a23767ece8e950bc43a92ee3b368e369156ebcc84293de9238028f",
+  "receipt": {
+    "to": null,
+    "from": "0x9E1c4D796e389Cb96d644Dd9A98CDBeE99EC4440",
+    "contractAddress": "0x83fDa0C6401A3615D59c3Ac46Cd3d211d2E088aA",
+    "transactionIndex": 2,
+    "gasUsed": "844334",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x3c9b5aaa6703e140575ef6d4bd80441745d28eba73b5b2fe14a1bdecf75dfd8c",
+    "transactionHash": "0x98392fadc3a23767ece8e950bc43a92ee3b368e369156ebcc84293de9238028f",
+    "logs": [],
+    "blockNumber": 29331084,
+    "cumulativeGasUsed": "12504987",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "a3e0f8b475b37a9b222b6e0a76db840e",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_assetTotalDeposits\",\"type\":\"uint256\"},{\"internalType\":\"contract IShareToken\",\"name\":\"_shareToken\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"}],\"name\":\"balanceOfUnderlying\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract ISilo\",\"name\":\"_silo\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_asset\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"}],\"name\":\"borrowShare\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract ISilo\",\"name\":\"_silo\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_asset\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"}],\"name\":\"collateralBalanceOfUnderlying\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract ISilo\",\"name\":\"_silo\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_asset\",\"type\":\"address\"}],\"name\":\"collateralOnlyDeposits\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract ISilo\",\"name\":\"_silo\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_asset\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"}],\"name\":\"debtBalanceOfUnderlying\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract ISilo\",\"name\":\"_silo\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"}],\"name\":\"getUserLiquidationThreshold\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract ISilo\",\"name\":\"_silo\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"}],\"name\":\"getUserMaximumLTV\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract ISilo\",\"name\":\"_silo\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"}],\"name\":\"inDebt\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract ISilo\",\"name\":\"_silo\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_asset\",\"type\":\"address\"}],\"name\":\"protocolFees\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract ISilo\",\"name\":\"_silo\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_asset\",\"type\":\"address\"}],\"name\":\"totalBorrowAmount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract ISilo\",\"name\":\"_silo\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_asset\",\"type\":\"address\"}],\"name\":\"totalBorrowShare\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract ISilo\",\"name\":\"_silo\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_asset\",\"type\":\"address\"}],\"name\":\"totalDeposits\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"getUserLiquidationThreshold(address,address)\":{\"details\":\"calculate combined Liquidation Threshold based on user deposits\",\"returns\":{\"_0\":\"liquidation threshold of given user\"}},\"getUserMaximumLTV(address,address)\":{\"details\":\"calculate combined Maximum Loan-To-Value of user\",\"returns\":{\"_0\":\"maximumLTV Maximum Loan-To-Value of given user\"}},\"inDebt(address,address)\":{\"details\":\"check if user is in debt\",\"returns\":{\"_0\":\"TRUE if user borrowed any amount of any asset, otherwise FALSE\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/SiloLens.sol\":\"SiloLens\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (token/ERC20/IERC20.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Interface of the ERC20 standard as defined in the EIP.\\n */\\ninterface IERC20 {\\n    /**\\n     * @dev Returns the amount of tokens in existence.\\n     */\\n    function totalSupply() external view returns (uint256);\\n\\n    /**\\n     * @dev Returns the amount of tokens owned by `account`.\\n     */\\n    function balanceOf(address account) external view returns (uint256);\\n\\n    /**\\n     * @dev Moves `amount` tokens from the caller's account to `recipient`.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * Emits a {Transfer} event.\\n     */\\n    function transfer(address recipient, uint256 amount) external returns (bool);\\n\\n    /**\\n     * @dev Returns the remaining number of tokens that `spender` will be\\n     * allowed to spend on behalf of `owner` through {transferFrom}. This is\\n     * zero by default.\\n     *\\n     * This value changes when {approve} or {transferFrom} are called.\\n     */\\n    function allowance(address owner, address spender) external view returns (uint256);\\n\\n    /**\\n     * @dev Sets `amount` as the allowance of `spender` over the caller's tokens.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * IMPORTANT: Beware that changing an allowance with this method brings the risk\\n     * that someone may use both the old and the new allowance by unfortunate\\n     * transaction ordering. One possible solution to mitigate this race\\n     * condition is to first reduce the spender's allowance to 0 and set the\\n     * desired value afterwards:\\n     * https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729\\n     *\\n     * Emits an {Approval} event.\\n     */\\n    function approve(address spender, uint256 amount) external returns (bool);\\n\\n    /**\\n     * @dev Moves `amount` tokens from `sender` to `recipient` using the\\n     * allowance mechanism. `amount` is then deducted from the caller's\\n     * allowance.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * Emits a {Transfer} event.\\n     */\\n    function transferFrom(\\n        address sender,\\n        address recipient,\\n        uint256 amount\\n    ) external returns (bool);\\n\\n    /**\\n     * @dev Emitted when `value` tokens are moved from one account (`from`) to\\n     * another (`to`).\\n     *\\n     * Note that `value` may be zero.\\n     */\\n    event Transfer(address indexed from, address indexed to, uint256 value);\\n\\n    /**\\n     * @dev Emitted when the allowance of a `spender` for an `owner` is set by\\n     * a call to {approve}. `value` is the new allowance.\\n     */\\n    event Approval(address indexed owner, address indexed spender, uint256 value);\\n}\\n\",\"keccak256\":\"0x61437cb513a887a1bbad006e7b1c8b414478427d33de47c5600af3c748f108da\",\"license\":\"MIT\"},\"contracts/SiloLens.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.7;\\n\\nimport \\\"./interfaces/ISilo.sol\\\";\\nimport \\\"./lib/EasyMath.sol\\\";\\n\\n\\ncontract SiloLens {\\n    using EasyMath for uint256;\\n\\n    function totalDeposits(ISilo _silo, address _asset) external view returns (uint256) {\\n        return _silo.assetStorage(_asset).totalDeposits;\\n    }\\n\\n    function collateralOnlyDeposits(ISilo _silo, address _asset) external view returns (uint256) {\\n        return _silo.assetStorage(_asset).collateralOnlyDeposits;\\n    }\\n\\n    function totalBorrowAmount(ISilo _silo, address _asset) external view returns (uint256) {\\n        return _silo.assetStorage(_asset).totalBorrowAmount;\\n    }\\n\\n    function protocolFees(ISilo _silo, address _asset) external view returns (uint256) {\\n        return _silo.assetStorage(_asset).protocolFees;\\n    }\\n\\n    function totalBorrowShare(ISilo _silo, address _asset) external view returns (uint256) {\\n        return _silo.assetStorage(_asset).debtToken.totalSupply();\\n    }\\n\\n    function borrowShare(ISilo _silo, address _asset, address _user) external view returns (uint256) {\\n        return _silo.assetStorage(_asset).debtToken.balanceOf(_user);\\n    }\\n\\n    function collateralBalanceOfUnderlying(ISilo _silo, address _asset, address _user) external view returns (uint256) {\\n        ISilo.AssetStorage memory _state = _silo.assetStorage(_asset);\\n\\n        return balanceOfUnderlying(_state.totalDeposits, _state.collateralToken, _user) +\\n            balanceOfUnderlying(_state.collateralOnlyDeposits, _state.collateralOnlyToken, _user);\\n    }\\n\\n    function debtBalanceOfUnderlying(ISilo _silo, address _asset, address _user) external view returns (uint256) {\\n        ISilo.AssetStorage memory _state = _silo.assetStorage(_asset);\\n\\n        return balanceOfUnderlying(_state.totalBorrowAmount, _state.debtToken, _user);\\n    }\\n\\n    /// @dev calculate combined Liquidation Threshold based on user deposits\\n    /// @return liquidation threshold of given user\\n    function getUserLiquidationThreshold(ISilo _silo, address _user) external view returns (uint256) {\\n        return _silo.calculateUserLTV(_user, false);\\n    }\\n\\n    /// @dev calculate combined Maximum Loan-To-Value of user\\n    /// @return maximumLTV Maximum Loan-To-Value of given user\\n    function getUserMaximumLTV(ISilo _silo, address _user) external view returns (uint256) {\\n        return _silo.calculateUserLTV(_user, true);\\n    }\\n\\n    /// @dev check if user is in debt\\n    /// @return TRUE if user borrowed any amount of any asset, otherwise FALSE\\n    function inDebt(ISilo _silo, address _user) external view returns (bool) {\\n        address[] memory allAssets = _silo.getAssets();\\n\\n        for (uint256 i; i < allAssets.length; i++) {\\n            if (_silo.assetStorage(allAssets[i]).debtToken.balanceOf(_user) != 0) return true;\\n        }\\n\\n        return false;\\n    }\\n\\n    function balanceOfUnderlying(uint256 _assetTotalDeposits, IShareToken _shareToken, address _user)\\n        public\\n        view\\n        returns (uint256)\\n    {\\n        uint256 share = _shareToken.balanceOf(_user);\\n        return share.toAmount(_assetTotalDeposits, _shareToken.totalSupply());\\n    }\\n}\\n\",\"keccak256\":\"0xce1ad7051f65ee38f2dc5b61d1197015f6b365e74e158fa20b8a53421b79e2d4\",\"license\":\"BUSL-1.1\"},\"contracts/interfaces/IBaseSilo.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.7;\\n\\nimport \\\"./IShareToken.sol\\\";\\n\\n\\ninterface IBaseSilo {\\n    struct AssetStorage {\\n        // Token that represents a share in totalDeposits of Silo\\n        IShareToken collateralToken;\\n        // Token that represents a share in collateralOnlyDeposits of Silo\\n        IShareToken collateralOnlyToken;\\n        // Token that represents a share in totalBorrowAmount of Silo\\n        IShareToken debtToken;\\n        // COLLATERAL: Amount of asset token that has been deposited to Silo with interest earned by depositors.\\n        // It also includes token amount that has been borrowed.\\n        uint256 totalDeposits;\\n        // COLLATERAL ONLY: Amount of asset token that has been deposited to Silo that can be ONLY used as collateral.\\n        // These deposits do NOT earn interest and CANNOT be borrowed.\\n        uint256 collateralOnlyDeposits;\\n        // DEBT: Amount of asset token that has been borrowed with accrued interest.\\n        uint256 totalBorrowAmount;\\n        // Timestamp of the last time `interestRate` has been updated in storage.\\n        uint256 interestRateTimestamp;\\n        // Total amount (ever growing) of asset token that has been earned by the protocol from generated interest.\\n        uint256 protocolFees;\\n        // Total amount of already harvested protocol fees\\n        uint256 harvestedProtocolFees;\\n        // True if asset was removed from the protocol. If so, deposit and borrow functions are disabled for that asset\\n        bool removed;\\n    }\\n\\n    function getAssets() external view returns (address[] memory assets);\\n\\n    function assetStorage(address _asset) external view returns (AssetStorage memory);\\n\\n    // function liquidationWithdraw(address _depositor) external returns (uint256 amount);\\n    // function seizeCollateral(address user, address liquidator) external returns (uint256);\\n    function isSolvent(address _user) external view returns (bool);\\n\\n    /// @dev calculate combined Loan-To-Value of user, using either maximumLTV or liquidationThreshold\\n    /// @param _useMaximumLTV bool\\n    ///         when TRUE returns maximum Loan-To-Value of given user,\\n    ///         when FALSE return liquidation threshold of given user\\n    /// @return Loan-To-Value of given user\\n    function calculateUserLTV(address _user, bool _useMaximumLTV) external view returns (uint256);\\n\\n    function calculateCollateralValue(address _user, address _asset, uint256 _assetPrice, uint256 _assetDecimals)\\n        external\\n        view\\n        returns (uint256);\\n\\n    function getLTV(address _user) external view returns (uint256);\\n\\n    /// @dev we do not allow for deposit when asset is already borrowed by user\\n    /// @param _asset asset we want to deposit\\n    /// @param _depositor depositor address\\n    /// @return true if asset can be deposited by depositor\\n    function depositPossible(address _asset, address _depositor) external view returns (bool);\\n\\n    /// @dev we do not allow for borrow when asset is also deposited by user\\n    /// @param _asset asset we want to deposit\\n    /// @param _borrower borrower address\\n    /// @return true if asset can be borrowed by borrower\\n    function borrowPossible(address _asset, address _borrower) external view returns (bool);\\n\\n    function getUtilization(address _asset) external view returns (uint256);\\n    function interestRateTimestamp(address _asset) external view returns (uint256);\\n}\\n\",\"keccak256\":\"0x5402c01c6593e7e95275080bcb24fe3c9b19103fb7e454419739845a34753fa1\",\"license\":\"BUSL-1.1\"},\"contracts/interfaces/IFlashLiquidationReceiver.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.7;\\n\\n/// @dev when performing Silo flash liquidation, FlashReceiver contract will receive all collaterals\\ninterface IFlashLiquidationReceiver {\\n    /// @dev this method is called when doing Silo flash liquidation\\n    ///         one can NOT assume, that if _seizedCollateral[i] != 0, then _shareAmountsToRepaid[i] must be 0\\n    ///         one should assume, that any combination of amounts is possible\\n    ///         on callback, one must call `Silo.repayFor` because at the end of transaction,\\n    ///         Silo will check if borrower is solvent.\\n    /// @param _user user address, that is liquidated\\n    /// @param _assets array of collateral assets received during user liquidation\\n    ///         this array contains all assets (collateral borrowed) without any order\\n    /// @param _receivedCollaterals array of collateral amounts received during user liquidation\\n    ///         indexes of amounts are related to `_assets`,\\n    /// @param _shareAmountsToRepaid array of amounts to repay for each asset\\n    ///         indexes of amounts are related to `_assets`,\\n    /// @param _flashReceiverData data that are passed from sender that executes liquidation\\n    function siloLiquidationCallback(\\n        address _user,\\n        address[] calldata _assets,\\n        uint256[] calldata _receivedCollaterals,\\n        uint256[] calldata _shareAmountsToRepaid,\\n        bytes memory _flashReceiverData\\n    ) external;\\n}\\n\",\"keccak256\":\"0xa4078a3d4b5e40bff017ea246ead7943f1b32e53a4ba632968bd203c7df46308\",\"license\":\"BUSL-1.1\"},\"contracts/interfaces/IShareToken.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity 0.8.7;\\n\\nimport \\\"@openzeppelin/contracts/token/ERC20/IERC20.sol\\\";\\n\\ninterface IShareToken is IERC20 {\\n    function mint(address _account, uint256 _amount) external;\\n\\n    function burn(address _account, uint256 _amount) external;\\n\\n    function symbol() external view returns (string memory);\\n}\\n\",\"keccak256\":\"0xbe8f1c72072eb237aff8757d30b2ddbf01512ae560d2a015a040547ef11a82e6\",\"license\":\"MIT\"},\"contracts/interfaces/ISilo.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.7;\\n\\nimport \\\"./IBaseSilo.sol\\\";\\nimport \\\"./IFlashLiquidationReceiver.sol\\\";\\n\\ninterface ISilo is IBaseSilo {\\n    function borrow(address _asset, uint256 _amount) external;\\n\\n    function borrowFor(address _asset, address _user, address _to, uint256 _amount) external;\\n\\n    function deposit(address _asset, uint256 _amount, bool collateralOnly) external;\\n\\n    function depositFor(address _asset, address _user, uint256 _amount, bool collateralOnly) external;\\n\\n    function repay(address _asset, uint256 _amount) external;\\n\\n    function repayFor(address _asset, address _user, uint256 _amount) external;\\n\\n    function withdraw(address _asset, uint256 _amount, bool collateralOnly) external;\\n\\n    function withdrawFor(\\n        address _asset,\\n        address _depositor,\\n        address _receiver,\\n        uint256 _amount,\\n        bool collateralOnly\\n    ) external;\\n\\n    /// @notice this methods does not requires to have tokens in order to liquidate user\\n    /// @param _users array of users to liquidate\\n    /// @param _liquidator all collateral will be send to this address\\n    /// @param _flashReceiver this address will be notified once all collateral will be send to _liquidator\\n    /// @param _flashReceiverData this data will be forward to receiver on notification\\n    /// @return assets array of all processed assets (collateral + debt, including removed)\\n    /// @return receivedCollaterals seizedCollaterals[userId][assetId] => amount\\n    ///         amounts of collaterals send to liquidator\\n    /// @return shareAmountsToRepaid shareAmountsToRepaid[userId][assetId] => amount\\n    ///         required amounts of debt to be repaid\\n    function flashLiquidate(\\n        address[] memory _users,\\n        address _liquidator,\\n        IFlashLiquidationReceiver _flashReceiver,\\n        bytes memory _flashReceiverData\\n    )\\n        external\\n        returns (\\n            address[] memory assets,\\n            uint256[][] memory receivedCollaterals,\\n            uint256[][] memory shareAmountsToRepaid\\n        );\\n}\\n\",\"keccak256\":\"0x96e7d309a60c6d8de7e2d09df54bc68b24d4c55f06c5e6916763b4d21d179759\",\"license\":\"BUSL-1.1\"},\"contracts/lib/EasyMath.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity 0.8.7;\\n\\nlibrary EasyMath {\\n    function abs(int256 x) internal pure returns (uint256) {\\n        return x <= 0 ? uint256(-x) : uint256(x);\\n    }\\n\\n    function toShare(uint256 amount, uint256 totalAmount, uint256 totalShares) internal pure returns (uint256) {\\n        if (totalShares == 0 || totalAmount == 0) {\\n            return amount;\\n        }\\n        return amount * totalShares / totalAmount;\\n    }\\n\\n    function toAmount(uint256 share, uint256 totalAmount, uint256 totalShares) internal pure returns (uint256) {\\n        if (totalShares == 0 || totalAmount == 0) {\\n            return 0;\\n        }\\n        return share * totalAmount / totalShares;\\n    }\\n}\\n\",\"keccak256\":\"0x3e8ad243cffb83a53d96126ef7578244f78f8493bc4e8fac888aa30622f82cf6\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610e51806100206000396000f3fe608060405234801561001057600080fd5b50600436106100b45760003560e01c806387f041401161007157806387f041401461014e57806388a9af4014610161578063af82d2bc14610174578063b003ec1414610187578063c719a3961461019a578063c8de8451146101ad57600080fd5b806302f417d3146100b9578063153ef040146100df57806375f746c9146100f257806379a5e1061461010557806382656b50146101185780638705c3591461012b575b600080fd5b6100cc6100c7366004610ccb565b6101c0565b6040519081526020015b60405180910390f35b6100cc6100ed366004610b8f565b6102c8565b6100cc610100366004610b8f565b610353565b6100cc610113366004610b8f565b6103dc565b6100cc610126366004610bc8565b610465565b61013e610139366004610b8f565b61056a565b60405190151581526020016100d6565b6100cc61015c366004610b8f565b610741565b6100cc61016f366004610b8f565b6107ca565b6100cc610182366004610bc8565b61084f565b6100cc610195366004610bc8565b6108e3565b6100cc6101a8366004610b8f565b610994565b6100cc6101bb366004610b8f565b6109cd565b6040516370a0823160e01b81526001600160a01b03828116600483015260009182918516906370a082319060240160206040518083038186803b15801561020657600080fd5b505afa15801561021a573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061023e9190610cb2565b90506102bd85856001600160a01b03166318160ddd6040518163ffffffff1660e01b815260040160206040518083038186803b15801561027d57600080fd5b505afa158015610291573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906102b59190610cb2565b839190610a87565b9150505b9392505050565b60405163bf27304160e01b81526001600160a01b0382811660048301526000919084169063bf273041906024016101406040518083038186803b15801561030e57600080fd5b505afa158015610322573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103469190610c13565b6080015190505b92915050565b60405163bf27304160e01b81526001600160a01b0382811660048301526000919084169063bf273041906024016101406040518083038186803b15801561039957600080fd5b505afa1580156103ad573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103d19190610c13565b606001519392505050565b60405163bf27304160e01b81526001600160a01b0382811660048301526000919084169063bf273041906024016101406040518083038186803b15801561042257600080fd5b505afa158015610436573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061045a9190610c13565b60e001519392505050565b60405163bf27304160e01b81526001600160a01b0383811660048301526000919085169063bf273041906024016101406040518083038186803b1580156104ab57600080fd5b505afa1580156104bf573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104e39190610c13565b60409081015190516370a0823160e01b81526001600160a01b038481166004830152909116906370a082319060240160206040518083038186803b15801561052a57600080fd5b505afa15801561053e573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906105629190610cb2565b949350505050565b600080836001600160a01b03166367e4ac2c6040518163ffffffff1660e01b815260040160006040518083038186803b1580156105a657600080fd5b505afa1580156105ba573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f191682016040526105e29190810190610ad6565b905060005b815181101561073657846001600160a01b031663bf27304183838151811061061157610611610dd7565b60200260200101516040518263ffffffff1660e01b815260040161064491906001600160a01b0391909116815260200190565b6101406040518083038186803b15801561065d57600080fd5b505afa158015610671573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906106959190610c13565b60409081015190516370a0823160e01b81526001600160a01b038681166004830152909116906370a082319060240160206040518083038186803b1580156106dc57600080fd5b505afa1580156106f0573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906107149190610cb2565b156107245760019250505061034d565b8061072e81610da6565b9150506105e7565b506000949350505050565b60405163bf27304160e01b81526001600160a01b0382811660048301526000919084169063bf273041906024016101406040518083038186803b15801561078757600080fd5b505afa15801561079b573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906107bf9190610c13565b60a001519392505050565b604051637f29153960e01b81526001600160a01b0382811660048301526000602483018190529190841690637f291539906044015b60206040518083038186803b15801561081757600080fd5b505afa15801561082b573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906102c19190610cb2565b60405163bf27304160e01b81526001600160a01b038381166004830152600091829186169063bf273041906024016101406040518083038186803b15801561089657600080fd5b505afa1580156108aa573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906108ce9190610c13565b90506102bd8160a001518260400151856101c0565b60405163bf27304160e01b81526001600160a01b038381166004830152600091829186169063bf273041906024016101406040518083038186803b15801561092a57600080fd5b505afa15801561093e573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906109629190610c13565b905061097781608001518260200151856101c0565b61098a82606001518360000151866101c0565b6102bd9190610d4d565b604051637f29153960e01b81526001600160a01b0382811660048301526001602483015260009190841690637f291539906044016107ff565b60405163bf27304160e01b81526001600160a01b0382811660048301526000919084169063bf273041906024016101406040518083038186803b158015610a1357600080fd5b505afa158015610a27573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610a4b9190610c13565b604001516001600160a01b03166318160ddd6040518163ffffffff1660e01b815260040160206040518083038186803b15801561081757600080fd5b6000811580610a94575082155b15610aa1575060006102c1565b81610aac8486610d87565b6105629190610d65565b80518015158114610ac657600080fd5b919050565b8051610ac681610e03565b60006020808385031215610ae957600080fd5b825167ffffffffffffffff80821115610b0157600080fd5b818501915085601f830112610b1557600080fd5b815181811115610b2757610b27610ded565b8060051b9150610b38848301610d1c565b8181528481019084860184860187018a1015610b5357600080fd5b600095505b83861015610b825780519450610b6d85610e03565b84835260019590950194918601918601610b58565b5098975050505050505050565b60008060408385031215610ba257600080fd5b8235610bad81610e03565b91506020830135610bbd81610e03565b809150509250929050565b600080600060608486031215610bdd57600080fd5b8335610be881610e03565b92506020840135610bf881610e03565b91506040840135610c0881610e03565b809150509250925092565b60006101408284031215610c2657600080fd5b610c2e610cf2565b610c3783610acb565b8152610c4560208401610acb565b6020820152610c5660408401610acb565b6040820152606083015160608201526080830151608082015260a083015160a082015260c083015160c082015260e083015160e0820152610100808401518183015250610120610ca7818501610ab6565b908201529392505050565b600060208284031215610cc457600080fd5b5051919050565b600080600060608486031215610ce057600080fd5b833592506020840135610bf881610e03565b604051610140810167ffffffffffffffff81118282101715610d1657610d16610ded565b60405290565b604051601f8201601f1916810167ffffffffffffffff81118282101715610d4557610d45610ded565b604052919050565b60008219821115610d6057610d60610dc1565b500190565b600082610d8257634e487b7160e01b600052601260045260246000fd5b500490565b6000816000190483118215151615610da157610da1610dc1565b500290565b6000600019821415610dba57610dba610dc1565b5060010190565b634e487b7160e01b600052601160045260246000fd5b634e487b7160e01b600052603260045260246000fd5b634e487b7160e01b600052604160045260246000fd5b6001600160a01b0381168114610e1857600080fd5b5056fea26469706673582212205f072b48fc97d32e21d101fc9c1d28d4ffe26e83a456c5cb1c0271c0e69e612564736f6c63430008070033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100b45760003560e01c806387f041401161007157806387f041401461014e57806388a9af4014610161578063af82d2bc14610174578063b003ec1414610187578063c719a3961461019a578063c8de8451146101ad57600080fd5b806302f417d3146100b9578063153ef040146100df57806375f746c9146100f257806379a5e1061461010557806382656b50146101185780638705c3591461012b575b600080fd5b6100cc6100c7366004610ccb565b6101c0565b6040519081526020015b60405180910390f35b6100cc6100ed366004610b8f565b6102c8565b6100cc610100366004610b8f565b610353565b6100cc610113366004610b8f565b6103dc565b6100cc610126366004610bc8565b610465565b61013e610139366004610b8f565b61056a565b60405190151581526020016100d6565b6100cc61015c366004610b8f565b610741565b6100cc61016f366004610b8f565b6107ca565b6100cc610182366004610bc8565b61084f565b6100cc610195366004610bc8565b6108e3565b6100cc6101a8366004610b8f565b610994565b6100cc6101bb366004610b8f565b6109cd565b6040516370a0823160e01b81526001600160a01b03828116600483015260009182918516906370a082319060240160206040518083038186803b15801561020657600080fd5b505afa15801561021a573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061023e9190610cb2565b90506102bd85856001600160a01b03166318160ddd6040518163ffffffff1660e01b815260040160206040518083038186803b15801561027d57600080fd5b505afa158015610291573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906102b59190610cb2565b839190610a87565b9150505b9392505050565b60405163bf27304160e01b81526001600160a01b0382811660048301526000919084169063bf273041906024016101406040518083038186803b15801561030e57600080fd5b505afa158015610322573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103469190610c13565b6080015190505b92915050565b60405163bf27304160e01b81526001600160a01b0382811660048301526000919084169063bf273041906024016101406040518083038186803b15801561039957600080fd5b505afa1580156103ad573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103d19190610c13565b606001519392505050565b60405163bf27304160e01b81526001600160a01b0382811660048301526000919084169063bf273041906024016101406040518083038186803b15801561042257600080fd5b505afa158015610436573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061045a9190610c13565b60e001519392505050565b60405163bf27304160e01b81526001600160a01b0383811660048301526000919085169063bf273041906024016101406040518083038186803b1580156104ab57600080fd5b505afa1580156104bf573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104e39190610c13565b60409081015190516370a0823160e01b81526001600160a01b038481166004830152909116906370a082319060240160206040518083038186803b15801561052a57600080fd5b505afa15801561053e573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906105629190610cb2565b949350505050565b600080836001600160a01b03166367e4ac2c6040518163ffffffff1660e01b815260040160006040518083038186803b1580156105a657600080fd5b505afa1580156105ba573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f191682016040526105e29190810190610ad6565b905060005b815181101561073657846001600160a01b031663bf27304183838151811061061157610611610dd7565b60200260200101516040518263ffffffff1660e01b815260040161064491906001600160a01b0391909116815260200190565b6101406040518083038186803b15801561065d57600080fd5b505afa158015610671573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906106959190610c13565b60409081015190516370a0823160e01b81526001600160a01b038681166004830152909116906370a082319060240160206040518083038186803b1580156106dc57600080fd5b505afa1580156106f0573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906107149190610cb2565b156107245760019250505061034d565b8061072e81610da6565b9150506105e7565b506000949350505050565b60405163bf27304160e01b81526001600160a01b0382811660048301526000919084169063bf273041906024016101406040518083038186803b15801561078757600080fd5b505afa15801561079b573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906107bf9190610c13565b60a001519392505050565b604051637f29153960e01b81526001600160a01b0382811660048301526000602483018190529190841690637f291539906044015b60206040518083038186803b15801561081757600080fd5b505afa15801561082b573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906102c19190610cb2565b60405163bf27304160e01b81526001600160a01b038381166004830152600091829186169063bf273041906024016101406040518083038186803b15801561089657600080fd5b505afa1580156108aa573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906108ce9190610c13565b90506102bd8160a001518260400151856101c0565b60405163bf27304160e01b81526001600160a01b038381166004830152600091829186169063bf273041906024016101406040518083038186803b15801561092a57600080fd5b505afa15801561093e573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906109629190610c13565b905061097781608001518260200151856101c0565b61098a82606001518360000151866101c0565b6102bd9190610d4d565b604051637f29153960e01b81526001600160a01b0382811660048301526001602483015260009190841690637f291539906044016107ff565b60405163bf27304160e01b81526001600160a01b0382811660048301526000919084169063bf273041906024016101406040518083038186803b158015610a1357600080fd5b505afa158015610a27573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610a4b9190610c13565b604001516001600160a01b03166318160ddd6040518163ffffffff1660e01b815260040160206040518083038186803b15801561081757600080fd5b6000811580610a94575082155b15610aa1575060006102c1565b81610aac8486610d87565b6105629190610d65565b80518015158114610ac657600080fd5b919050565b8051610ac681610e03565b60006020808385031215610ae957600080fd5b825167ffffffffffffffff80821115610b0157600080fd5b818501915085601f830112610b1557600080fd5b815181811115610b2757610b27610ded565b8060051b9150610b38848301610d1c565b8181528481019084860184860187018a1015610b5357600080fd5b600095505b83861015610b825780519450610b6d85610e03565b84835260019590950194918601918601610b58565b5098975050505050505050565b60008060408385031215610ba257600080fd5b8235610bad81610e03565b91506020830135610bbd81610e03565b809150509250929050565b600080600060608486031215610bdd57600080fd5b8335610be881610e03565b92506020840135610bf881610e03565b91506040840135610c0881610e03565b809150509250925092565b60006101408284031215610c2657600080fd5b610c2e610cf2565b610c3783610acb565b8152610c4560208401610acb565b6020820152610c5660408401610acb565b6040820152606083015160608201526080830151608082015260a083015160a082015260c083015160c082015260e083015160e0820152610100808401518183015250610120610ca7818501610ab6565b908201529392505050565b600060208284031215610cc457600080fd5b5051919050565b600080600060608486031215610ce057600080fd5b833592506020840135610bf881610e03565b604051610140810167ffffffffffffffff81118282101715610d1657610d16610ded565b60405290565b604051601f8201601f1916810167ffffffffffffffff81118282101715610d4557610d45610ded565b604052919050565b60008219821115610d6057610d60610dc1565b500190565b600082610d8257634e487b7160e01b600052601260045260246000fd5b500490565b6000816000190483118215151615610da157610da1610dc1565b500290565b6000600019821415610dba57610dba610dc1565b5060010190565b634e487b7160e01b600052601160045260246000fd5b634e487b7160e01b600052603260045260246000fd5b634e487b7160e01b600052604160045260246000fd5b6001600160a01b0381168114610e1857600080fd5b5056fea26469706673582212205f072b48fc97d32e21d101fc9c1d28d4ffe26e83a456c5cb1c0271c0e69e612564736f6c63430008070033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "getUserLiquidationThreshold(address,address)": {
+        "details": "calculate combined Liquidation Threshold based on user deposits",
+        "returns": {
+          "_0": "liquidation threshold of given user"
+        }
+      },
+      "getUserMaximumLTV(address,address)": {
+        "details": "calculate combined Maximum Loan-To-Value of user",
+        "returns": {
+          "_0": "maximumLTV Maximum Loan-To-Value of given user"
+        }
+      },
+      "inDebt(address,address)": {
+        "details": "check if user is in debt",
+        "returns": {
+          "_0": "TRUE if user borrowed any amount of any asset, otherwise FALSE"
+        }
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}
