@@ -8,7 +8,8 @@ rm -rf ./deployments
 mkdir -p "contracts/liquidation"
 mkdir -p "contracts/interfaces"
 mkdir -p "contracts/lib"
-mkdir "deployments"
+mkdir -p "deployments/kovan"
+mkdir -p "deployments/rinkeby"
 
 
 cd ../silo-contracts/
@@ -16,7 +17,9 @@ cd ../silo-contracts/
 npx hardhat compile
 
 cp -R ./contracts/liquidation/* ../liquidation/contracts/liquidation/
-cp -R ./deployments/ ../liquidation/deployments/
+cp -R ./deployments/kovan/* ../liquidation/deployments/kovan/
+cp -R ./deployments/rinkeby/* ../liquidation/deployments/rinkeby/
+
 find ../liquidation/deployments/ -type f -name "Founding*" -depth -delete;
 find ../liquidation/deployments/ -type f -name "Funders*" -depth -delete;
 find ../liquidation/deployments/ -type f -name "Future*" -depth -delete;
