@@ -1,4 +1,4 @@
-# liquidation
+# Silo Liquidation Helper
 
 Liquidation Helper contract + necessary ABIs to perform liquidation
 
@@ -44,9 +44,13 @@ or to see how this process looks in details.
 **NOTICE**: most of the methods allows to execute calls in batches.  
 We do not have any tests or calculations that will tell us what is the limit of input data.
 
-
 ## Development
 
 ```shell
 ./copy-files.sh
 ```
+
+## Licensing
+
+The primary license for `Silo Liquidation Helper` is the Business Source License 1.1 (BUSL-1.1), 
+see [LICENSE](./LICENSE).
