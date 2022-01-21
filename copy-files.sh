@@ -16,6 +16,7 @@ cd ../silo-contracts/
 
 npx hardhat compile
 
+cp ./LICENSE ../liquidation/
 cp -R ./contracts/liquidation/* ../liquidation/contracts/liquidation/
 cp -R ./deployments/kovan/* ../liquidation/deployments/kovan/
 cp -R ./deployments/rinkeby/* ../liquidation/deployments/rinkeby/
