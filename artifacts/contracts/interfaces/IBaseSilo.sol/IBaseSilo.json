@@ -1,0 +1,277 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "IBaseSilo",
+  "sourceName": "contracts/interfaces/IBaseSilo.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_asset",
+          "type": "address"
+        }
+      ],
+      "name": "assetStorage",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "contract IShareToken",
+              "name": "collateralToken",
+              "type": "address"
+            },
+            {
+              "internalType": "contract IShareToken",
+              "name": "collateralOnlyToken",
+              "type": "address"
+            },
+            {
+              "internalType": "contract IShareToken",
+              "name": "debtToken",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "totalDeposits",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "collateralOnlyDeposits",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "totalBorrowAmount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "interestRateTimestamp",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "protocolFees",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "harvestedProtocolFees",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "removed",
+              "type": "bool"
+            }
+          ],
+          "internalType": "struct IBaseSilo.AssetStorage",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_asset",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_borrower",
+          "type": "address"
+        }
+      ],
+      "name": "borrowPossible",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_asset",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_assetPrice",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_assetDecimals",
+          "type": "uint256"
+        }
+      ],
+      "name": "calculateCollateralValue",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "_useMaximumLTV",
+          "type": "bool"
+        }
+      ],
+      "name": "calculateUserLTV",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_asset",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_depositor",
+          "type": "address"
+        }
+      ],
+      "name": "depositPossible",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getAssets",
+      "outputs": [
+        {
+          "internalType": "address[]",
+          "name": "assets",
+          "type": "address[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        }
+      ],
+      "name": "getLTV",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_asset",
+          "type": "address"
+        }
+      ],
+      "name": "getUtilization",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_asset",
+          "type": "address"
+        }
+      ],
+      "name": "interestRateTimestamp",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        }
+      ],
+      "name": "isSolvent",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
