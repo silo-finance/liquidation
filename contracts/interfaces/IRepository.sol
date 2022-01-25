@@ -5,6 +5,37 @@ import "./IFactory.sol";
 import "./ITokensFactory.sol";
 
 interface IRepository {
+    event NewSilo(address indexed silo, address indexed asset, uint256 siloVersion, address[] bridgeAssets);
+
+    event BridgeAssetAdded(address newBridgeAsset);
+
+    event BridgeAssetRemoved(address bridgeAssetRemoved);
+
+    event InterestRateModel(address oldModel, address newModel);
+
+    event BridgePoolUpdate(address oldPool, address newPool);
+
+    event OracleUpdate(address oldOracle, address newOracle);
+
+    event TokensFactoryUpdate(address oldTokensFactory, address newTokensFactory);
+
+    event RouterUpdate(address oldRouter, address newRouter);
+
+    event RegisterSiloVersion(address factory, uint256 siloLatestVersion, uint256 siloDefaultVersion);
+
+    event UnregisterSiloVersion(address factory, uint256 siloVersion);
+
+    event SiloDefaultVersion(uint256 siloDefaultVersion, uint256 defaultVersion);
+
+    event FeeUpdate(
+        uint256 oldEntryFee,
+        uint256 newEntryFee,
+        uint256 oldProtocolShareFee,
+        uint256 newProtocolShareFee,
+        uint256 oldProtocolLiquidationFee,
+        uint256 newProtocolLiquidationFee
+    );
+
     /// @dev use this method only when off-chain verification is OFF
     /// @param _siloAsset silo asset
     /// @param _siloVersion version of silo implementation
