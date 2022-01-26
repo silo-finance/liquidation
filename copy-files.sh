@@ -1,5 +1,6 @@
 #!/bin/bash
 
+rm ./LICENSE*
 rm -rf ./cache
 rm -rf ./artifacts
 rm -rf ./contracts
@@ -16,7 +17,7 @@ cd ../silo-contracts/
 
 npx hardhat compile
 
-cp ./LICENSE ../liquidation/
+cp ./LICENSE* ../liquidation/
 cp -R ./contracts/liquidation/* ../liquidation/contracts/liquidation/
 cp -R ./deployments/kovan/* ../liquidation/deployments/kovan/
 cp -R ./deployments/rinkeby/* ../liquidation/deployments/rinkeby/
