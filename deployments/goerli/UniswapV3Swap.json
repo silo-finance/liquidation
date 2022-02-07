@@ -1,0 +1,237 @@
+{
+  "address": "0x88D2D0aC9Dbc2c8Ffb76001C9724c7F2Fb9C9e4A",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_router",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "ASSETS_FEES_SELECTOR",
+      "outputs": [
+        {
+          "internalType": "bytes4",
+          "name": "",
+          "type": "bytes4"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "path",
+          "type": "address[]"
+        },
+        {
+          "internalType": "uint24[]",
+          "name": "fees",
+          "type": "uint24[]"
+        }
+      ],
+      "name": "pathToBytes",
+      "outputs": [
+        {
+          "internalType": "bytes",
+          "name": "bytesPath",
+          "type": "bytes"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_oracle",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_asset",
+          "type": "address"
+        }
+      ],
+      "name": "resolveFee",
+      "outputs": [
+        {
+          "internalType": "uint24",
+          "name": "fee",
+          "type": "uint24"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "router",
+      "outputs": [
+        {
+          "internalType": "contract ISwapRouter",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "spenderToApprove",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_tokenIn",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_tokenOut",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_siloOracle",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_siloAsset",
+          "type": "address"
+        }
+      ],
+      "name": "swapAmountIn",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "amountOut",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_tokenIn",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_tokenOut",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amountOut",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_siloOracle",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_siloAsset",
+          "type": "address"
+        }
+      ],
+      "name": "swapAmountOut",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "amountIn",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xd773e2d61b2a3ba59eb7bf612f3b46b044c332ebf7a6cf113537022235fac13c",
+  "receipt": {
+    "to": null,
+    "from": "0x9E1c4D796e389Cb96d644Dd9A98CDBeE99EC4440",
+    "contractAddress": "0x88D2D0aC9Dbc2c8Ffb76001C9724c7F2Fb9C9e4A",
+    "transactionIndex": 35,
+    "gasUsed": "592244",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0xf2f599272b6f6eee8bb2c8f3f6e291dc77d9b86a6feb7b19cd8f83aeaaa44e78",
+    "transactionHash": "0xd773e2d61b2a3ba59eb7bf612f3b46b044c332ebf7a6cf113537022235fac13c",
+    "logs": [],
+    "blockNumber": 6339041,
+    "cumulativeGasUsed": "7402945",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0xE592427A0AEce92De3Edee1F18E0157C05861564"
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "513d71c9d0c126d5b4efd168466082e1",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_router\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"ASSETS_FEES_SELECTOR\",\"outputs\":[{\"internalType\":\"bytes4\",\"name\":\"\",\"type\":\"bytes4\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"path\",\"type\":\"address[]\"},{\"internalType\":\"uint24[]\",\"name\":\"fees\",\"type\":\"uint24[]\"}],\"name\":\"pathToBytes\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"bytesPath\",\"type\":\"bytes\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_oracle\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_asset\",\"type\":\"address\"}],\"name\":\"resolveFee\",\"outputs\":[{\"internalType\":\"uint24\",\"name\":\"fee\",\"type\":\"uint24\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"router\",\"outputs\":[{\"internalType\":\"contract ISwapRouter\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"spenderToApprove\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_tokenIn\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_tokenOut\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_siloOracle\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_siloAsset\",\"type\":\"address\"}],\"name\":\"swapAmountIn\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"amountOut\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_tokenIn\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_tokenOut\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_amountOut\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_siloOracle\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_siloAsset\",\"type\":\"address\"}],\"name\":\"swapAmountOut\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"amountIn\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"spenderToApprove()\":{\"returns\":{\"_0\":\"address that needs to have approval to spend tokens to execute a swap\"}},\"swapAmountIn(address,address,uint256,address,address)\":{\"details\":\"swaps `_amountIn` of `_tokenIn` for `_tokenOut`. It might require approvals.\",\"returns\":{\"amountOut\":\"amount of _tokenOut received\"}},\"swapAmountOut(address,address,uint256,address,address)\":{\"details\":\"swaps `_tokenIn` for `_amountOut` of  `_tokenOut`. It might require approvals\",\"returns\":{\"amountIn\":\"amount of _tokenIn spend\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/liquidation/UniswapV3Swap.sol\":\"UniswapV3Swap\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@uniswap/v3-core/contracts/interfaces/callback/IUniswapV3SwapCallback.sol\":{\"content\":\"// SPDX-License-Identifier: GPL-2.0-or-later\\npragma solidity >=0.5.0;\\n\\n/// @title Callback for IUniswapV3PoolActions#swap\\n/// @notice Any contract that calls IUniswapV3PoolActions#swap must implement this interface\\ninterface IUniswapV3SwapCallback {\\n    /// @notice Called to `msg.sender` after executing a swap via IUniswapV3Pool#swap.\\n    /// @dev In the implementation you must pay the pool tokens owed for the swap.\\n    /// The caller of this method must be checked to be a UniswapV3Pool deployed by the canonical UniswapV3Factory.\\n    /// amount0Delta and amount1Delta can both be 0 if no tokens were swapped.\\n    /// @param amount0Delta The amount of token0 that was sent (negative) or must be received (positive) by the pool by\\n    /// the end of the swap. If positive, the callback must send that amount of token0 to the pool.\\n    /// @param amount1Delta The amount of token1 that was sent (negative) or must be received (positive) by the pool by\\n    /// the end of the swap. If positive, the callback must send that amount of token1 to the pool.\\n    /// @param data Any data passed through by the caller via the IUniswapV3PoolActions#swap call\\n    function uniswapV3SwapCallback(\\n        int256 amount0Delta,\\n        int256 amount1Delta,\\n        bytes calldata data\\n    ) external;\\n}\\n\",\"keccak256\":\"0x3f485fb1a44e8fbeadefb5da07d66edab3cfe809f0ac4074b1e54e3eb3c4cf69\",\"license\":\"GPL-2.0-or-later\"},\"@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol\":{\"content\":\"// SPDX-License-Identifier: GPL-2.0-or-later\\npragma solidity >=0.7.5;\\npragma abicoder v2;\\n\\nimport '@uniswap/v3-core/contracts/interfaces/callback/IUniswapV3SwapCallback.sol';\\n\\n/// @title Router token swapping functionality\\n/// @notice Functions for swapping tokens via Uniswap V3\\ninterface ISwapRouter is IUniswapV3SwapCallback {\\n    struct ExactInputSingleParams {\\n        address tokenIn;\\n        address tokenOut;\\n        uint24 fee;\\n        address recipient;\\n        uint256 deadline;\\n        uint256 amountIn;\\n        uint256 amountOutMinimum;\\n        uint160 sqrtPriceLimitX96;\\n    }\\n\\n    /// @notice Swaps `amountIn` of one token for as much as possible of another token\\n    /// @param params The parameters necessary for the swap, encoded as `ExactInputSingleParams` in calldata\\n    /// @return amountOut The amount of the received token\\n    function exactInputSingle(ExactInputSingleParams calldata params) external payable returns (uint256 amountOut);\\n\\n    struct ExactInputParams {\\n        bytes path;\\n        address recipient;\\n        uint256 deadline;\\n        uint256 amountIn;\\n        uint256 amountOutMinimum;\\n    }\\n\\n    /// @notice Swaps `amountIn` of one token for as much as possible of another along the specified path\\n    /// @param params The parameters necessary for the multi-hop swap, encoded as `ExactInputParams` in calldata\\n    /// @return amountOut The amount of the received token\\n    function exactInput(ExactInputParams calldata params) external payable returns (uint256 amountOut);\\n\\n    struct ExactOutputSingleParams {\\n        address tokenIn;\\n        address tokenOut;\\n        uint24 fee;\\n        address recipient;\\n        uint256 deadline;\\n        uint256 amountOut;\\n        uint256 amountInMaximum;\\n        uint160 sqrtPriceLimitX96;\\n    }\\n\\n    /// @notice Swaps as little as possible of one token for `amountOut` of another token\\n    /// @param params The parameters necessary for the swap, encoded as `ExactOutputSingleParams` in calldata\\n    /// @return amountIn The amount of the input token\\n    function exactOutputSingle(ExactOutputSingleParams calldata params) external payable returns (uint256 amountIn);\\n\\n    struct ExactOutputParams {\\n        bytes path;\\n        address recipient;\\n        uint256 deadline;\\n        uint256 amountOut;\\n        uint256 amountInMaximum;\\n    }\\n\\n    /// @notice Swaps as little as possible of one token for `amountOut` of another along the specified path (reversed)\\n    /// @param params The parameters necessary for the multi-hop swap, encoded as `ExactOutputParams` in calldata\\n    /// @return amountIn The amount of the input token\\n    function exactOutput(ExactOutputParams calldata params) external payable returns (uint256 amountIn);\\n}\\n\",\"keccak256\":\"0x9bfaf1feb32814623e627ab70f2409760b15d95f1f9b058e2b3399a8bb732975\",\"license\":\"GPL-2.0-or-later\"},\"contracts/interfaces/IOracle.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity >=0.6.0 <0.9.0;\\n\\n/// @title Common interface for Silo oracles\\ninterface IOracle {\\n    /// @notice initAsset can be used to do custom setup for new asset\\n    /// @dev Should be used for initialisation of asset for oracle (if initialisation is needed).\\n    ///      It sets all necessary data that are require to call `getPrice` for the asset.\\n    ///      Throws if initialisation fail.\\n    ///      When called multiple times it does not override better settings and it might throws.\\n    ///      e.g.: if with current settings we getting higher liquidity pool, initialisation should have no effect\\n    /// @param _asset token address (base token) for which we initialising oracle\\n    /// @param _data additional data (optional) that is required for initialisation process\\n    function initAsset(address _asset, bytes calldata _data) external;\\n\\n    /// @notice when changing oracle, notify that we start using it for asset.\\n    /// @dev It is used when we discover, that this oracle is better for asset.\\n    ///      If we need to setup anything in additional, in order to use this oracle for asset, it should be done\\n    ///      inside this method. At this point asset should be initialised (so we have all necessary data for it).\\n    ///      Throws if this oracle can not be use for provided asset.\\n    /// @param _asset token address (base token) for which this oracle will be used from now on.\\n    function notifyAboutChoice(address _asset) external;\\n\\n    /// @dev calculates TWAP price for asset/quote\\n    ///         It unifies all tokens decimal to 18, examples:\\n    ///         - if asses == quote it returns 1e18\\n    ///         - if asset is USDC and quote is ETH and ETH costs ~$3300 then it returns ~0.0003e18\\n    /// @return price of asses with 18 decimals\\n    function getPrice(address _asset) external view returns (uint256 price);\\n\\n    /// @notice Informs if oracle has all required settings for asset and can provide data for it\\n    /// @dev It is not always a case, that asset must be initialized before it can be use by oracle.\\n    ///      Some oracles implementations can work out of the box for any assets.\\n    ///      If asset is not supported, it does not mean it can not be used,\\n    ///      it might need initialization to become supported.\\n    /// @param _asset token address\\n    /// @return true is oracle is able to provide price for asset\\n    function assetSupported(address _asset) external view returns (bool);\\n\\n    // TODO should we have minimalRequiredLiquidity?\\n\\n    /// @notice Search for highest possible liquidity for quote token.\\n    ///         This method is used to establish, if pool is better (not less liquidity) or worse (less liquidity)\\n    /// @dev For some oracles, asset must be initialized in order to be able to run this method\\n    ///      or there might be some additional (dedicated to oracle) settings, that must be set up in order search works\\n    ///      Implementation of this method must be dome in a way, that when asset is initialized and we have\\n    ///      any additional required settings in place, it will highest existing liquidity pool for asset.\\n    ///      It is possible, that it will throw on invalid data or uninitialized asset.\\n    /// @return liquidity of quote token for specified asset\\n    function getQuoteLiquidity(address _asset) external view returns (uint256 liquidity);\\n\\n    /// @dev protocol should NOT use this method\\n    ///         this is only for off-chain checks for raw liquidity\\n    ///         NOTICE: sometimes it might be required to setup oracle, so it can find required pool\\n    ///         eg. for UniswapV3, if new pool will be created with new fee that is not present in oracle contract\\n    ///         you have to add this new fee, then the pool can be found and `getQuoteLiquidityRaw` can be used\\n    function getQuoteLiquidityRaw(address _asset) external view returns (uint256 liquidity);\\n\\n    /// @return address of quote token that must be a copy of SiloBridgePool.asset\\n    function quoteToken() external view returns (address);\\n\\n    /// @notice Helper method that allows easily detects, if contract is SiloOracle\\n    /// @dev this can save us from simple human errors, in case we use invalid address\\n    ///      but this should NOT be treated as security check\\n    /// @return always true\\n    function isSiloOracle() external pure returns (bool);\\n}\\n\",\"keccak256\":\"0x575f292f66e6c82c42fc0a3ab7bf9b2d032401a3635f1ebaf6848ed860a20732\",\"license\":\"BUSL-1.1\"},\"contracts/interfaces/ISwapper.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity >=0.7.0 <0.9.0;\\n\\ninterface ISwapper {\\n    /// @dev swaps `_amountIn` of `_tokenIn` for `_tokenOut`. It might require approvals.\\n    /// @return amountOut amount of _tokenOut received\\n    function swapAmountIn(\\n        address _tokenIn,\\n        address _tokenOut,\\n        uint256 _amountIn,\\n        address _siloOracle,\\n        address _siloAsset\\n    ) external returns (uint256 amountOut);\\n\\n    /// @dev swaps `_tokenIn` for `_amountOut` of  `_tokenOut`. It might require approvals\\n    /// @return amountIn amount of _tokenIn spend\\n    function swapAmountOut(\\n        address _tokenIn,\\n        address _tokenOut,\\n        uint256 _amountOut,\\n        address _siloOracle,\\n        address _siloAsset\\n    ) external returns (uint256 amountIn);\\n\\n    /// @return address that needs to have approval to spend tokens to execute a swap\\n    function spenderToApprove() external view returns (address);\\n}\\n\",\"keccak256\":\"0x7cf66bb1054b9fbdca5786b38d6ceca281bd291b1b6553fa07c1e4c8f76a1eb4\",\"license\":\"BUSL-1.1\"},\"contracts/liquidation/UniswapV3Swap.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\npragma solidity 0.8.7;\\npragma abicoder v2;\\n\\nimport \\\"@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol\\\";\\nimport \\\"../interfaces/ISwapper.sol\\\";\\nimport \\\"../interfaces/IOracle.sol\\\";\\n\\n\\ncontract UniswapV3Swap is ISwapper {\\n    bytes4 constant public ASSETS_FEES_SELECTOR = bytes4(keccak256(\\\"assetsFees(address)\\\"));\\n\\n    ISwapRouter public immutable router;\\n\\n    constructor (address _router) {\\n        router = ISwapRouter(_router);\\n    }\\n\\n    /// @inheritdoc ISwapper\\n    function swapAmountIn(\\n        address _tokenIn,\\n        address _tokenOut,\\n        uint256 _amount,\\n        address _siloOracle,\\n        address _siloAsset\\n    ) external override returns (uint256 amountOut) {\\n        uint24 fee = resolveFee(_siloOracle, _siloAsset);\\n        return _swapAmountIn(_tokenIn, _tokenOut, _amount, fee);\\n    }\\n\\n    /// @inheritdoc ISwapper\\n    function swapAmountOut(\\n        address _tokenIn,\\n        address _tokenOut,\\n        uint256 _amountOut,\\n        address _siloOracle,\\n        address _siloAsset\\n    ) external override returns (uint256 amountIn) {\\n        uint24 fee = resolveFee(_siloOracle, _siloAsset);\\n        return _swapAmountOut(_tokenIn, _tokenOut, _amountOut, fee);\\n    }\\n\\n    /// @inheritdoc ISwapper\\n    function spenderToApprove() external view override returns (address) {\\n        return address(router);\\n    }\\n\\n    function resolveFee(address _oracle, address _asset) public view returns (uint24 fee) {\\n        bytes memory callData = abi.encodeWithSelector(ASSETS_FEES_SELECTOR, _asset);\\n\\n        // solhint-disable-next-line avoid-low-level-calls\\n        (bool success, bytes memory data) = _oracle.staticcall(callData);\\n        require(success, \\\"fee for asset not set\\\");\\n\\n        fee = abi.decode(data, (uint24));\\n    }\\n\\n    function pathToBytes(address[] memory path, uint24[] memory fees) public pure returns (bytes memory bytesPath) {\\n        for (uint256 i = 0; i < path.length; i++) {\\n            bytesPath = i == fees.length\\n            ? abi.encodePacked(bytesPath, path[i])\\n            : abi.encodePacked(bytesPath, path[i], fees[i]);\\n        }\\n    }\\n\\n    function _swapAmountIn(\\n        address _tokenIn,\\n        address _tokenOut,\\n        uint256 _amountIn,\\n        uint24 _fee\\n    ) internal returns (uint256 amountOut) {\\n        ISwapRouter.ExactInputSingleParams memory params = ISwapRouter.ExactInputSingleParams({\\n            tokenIn: _tokenIn,\\n            tokenOut: _tokenOut,\\n            fee: _fee,\\n            recipient: address(this),\\n            deadline: block.timestamp,\\n            amountIn: _amountIn,\\n            amountOutMinimum: 1,\\n            sqrtPriceLimitX96: 0\\n        });\\n\\n        return router.exactInputSingle(params);\\n    }\\n\\n    function _swapAmountOut(\\n        address _tokenIn,\\n        address _tokenOut,\\n        uint256 _amountOut,\\n        uint24 _fee\\n    ) internal returns (uint256 amountOut) {\\n        ISwapRouter.ExactOutputSingleParams memory params = ISwapRouter.ExactOutputSingleParams({\\n            tokenIn: _tokenIn,\\n            tokenOut: _tokenOut,\\n            fee: _fee,\\n            recipient: address(this),\\n            deadline: block.timestamp,\\n            amountOut: _amountOut,\\n            amountInMaximum: type(uint256).max,\\n            sqrtPriceLimitX96: 0\\n        });\\n\\n        return router.exactOutputSingle(params);\\n    }\\n}\\n\",\"keccak256\":\"0xd640863da3a92dc06bb1143809198af00c265ef71e2f90ee8b78b83971b232bf\",\"license\":\"BUSL-1.1\"}},\"version\":1}",
+  "bytecode": "0x60a060405234801561001057600080fd5b50604051610a62380380610a6283398101604081905261002f91610044565b60601b6001600160601b031916608052610074565b60006020828403121561005657600080fd5b81516001600160a01b038116811461006d57600080fd5b9392505050565b60805160601c6109bb6100a760003960008181610104015281816101410152818161040e01526104f201526109bb6000f3fe608060405234801561001057600080fd5b506004361061007d5760003560e01c80639cffaf6f1161005b5780639cffaf6f146100ef578063db36eb2e14610102578063f887ea401461013c578063fc32922f1461016357600080fd5b8063168c66b41461008257806351f00308146100a85780639b562f38146100c8575b600080fd5b6100956100903660046105f3565b6101a3565b6040519081526020015b60405180910390f35b6100bb6100b6366004610651565b6101c9565b60405161009f91906107f4565b6100db6100d63660046105c0565b610291565b60405162ffffff909116815260200161009f565b6100956100fd3660046105f3565b610397565b7f00000000000000000000000000000000000000000000000000000000000000005b6040516001600160a01b03909116815260200161009f565b6101247f000000000000000000000000000000000000000000000000000000000000000081565b61018a7f10f2a5091c0d87d755d0d7447d50bfb9ff0d95b3bfa45605046a581667ba9c7d81565b6040516001600160e01b0319909116815260200161009f565b6000806101b08484610291565b90506101be878787846103b2565b979650505050505050565b606060005b835181101561028a578251811461023a57818482815181106101f2576101f2610945565b602002602001015184838151811061020c5761020c610945565b6020026020010151604051602001610226939291906107a8565b604051602081830303815290604052610276565b8184828151811061024d5761024d610945565b6020026020010151604051602001610266929190610771565b6040516020818303038152906040525b9150806102828161091c565b9150506101ce565b5092915050565b604080516001600160a01b0383811660248084019190915283518084039091018152604490920183526020820180516001600160e01b03166310f2a50960e01b1790529151600092839182918716906102eb908590610755565b600060405180830381855afa9150503d8060008114610326576040519150601f19603f3d011682016040523d82523d6000602084013e61032b565b606091505b5091509150816103795760405162461bcd60e51b815260206004820152601560248201527419995948199bdc88185cdcd95d081b9bdd081cd95d605a1b604482015260640160405180910390fd5b8080602001905181019061038d9190610718565b9695505050505050565b6000806103a48484610291565b90506101be87878784610497565b60408051610100810182526001600160a01b038087168252858116602083015262ffffff84168284015230606083015242608083015260a0820185905260001960c0830152600060e083018190529251631b67c43360e31b81527f00000000000000000000000000000000000000000000000000000000000000009091169063db3e219890610445908490600401610827565b602060405180830381600087803b15801561045f57600080fd5b505af1158015610473573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061038d919061073c565b60408051610100810182526001600160a01b038087168252858116602083015262ffffff84168284015230606083015242608083015260a08201859052600160c0830152600060e08301819052925163414bf38960e01b81527f00000000000000000000000000000000000000000000000000000000000000009091169063414bf38990610445908490600401610827565b80356001600160a01b038116811461054057600080fd5b919050565b600082601f83011261055657600080fd5b8135602061056b610566836108c8565b610897565b80838252828201915082860187848660051b890101111561058b57600080fd5b60005b858110156105b35781356105a181610971565b8452928401929084019060010161058e565b5090979650505050505050565b600080604083850312156105d357600080fd5b6105dc83610529565b91506105ea60208401610529565b90509250929050565b600080600080600060a0868803121561060b57600080fd5b61061486610529565b945061062260208701610529565b93506040860135925061063760608701610529565b915061064560808701610529565b90509295509295909350565b6000806040838503121561066457600080fd5b823567ffffffffffffffff8082111561067c57600080fd5b818501915085601f83011261069057600080fd5b813560206106a0610566836108c8565b8083825282820191508286018a848660051b89010111156106c057600080fd5b600096505b848710156106ea576106d681610529565b8352600196909601959183019183016106c5565b509650508601359250508082111561070157600080fd5b5061070e85828601610545565b9150509250929050565b60006020828403121561072a57600080fd5b815161073581610971565b9392505050565b60006020828403121561074e57600080fd5b5051919050565b600082516107678184602087016108ec565b9190910192915050565b600083516107838184602088016108ec565b60609390931b6bffffffffffffffffffffffff19169190920190815260140192915050565b600084516107ba8184602089016108ec565b60609490941b6bffffffffffffffffffffffff19169190930190815260e89190911b6001600160e81b031916601482015260170192915050565b60208152600082518060208401526108138160408501602087016108ec565b601f01601f19169190910160400192915050565b6101008101610891828480516001600160a01b03908116835260208083015182169084015260408083015162ffffff16908401526060808301518216908401526080808301519084015260a0828101519084015260c0808301519084015260e09182015116910152565b92915050565b604051601f8201601f1916810167ffffffffffffffff811182821017156108c0576108c061095b565b604052919050565b600067ffffffffffffffff8211156108e2576108e261095b565b5060051b60200190565b60005b838110156109075781810151838201526020016108ef565b83811115610916576000848401525b50505050565b600060001982141561093e57634e487b7160e01b600052601160045260246000fd5b5060010190565b634e487b7160e01b600052603260045260246000fd5b634e487b7160e01b600052604160045260246000fd5b62ffffff8116811461098257600080fd5b5056fea2646970667358221220267a26542240f6d3a91efa495d72a1505035c3394dbd542788f3fe94c907409264736f6c63430008070033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061007d5760003560e01c80639cffaf6f1161005b5780639cffaf6f146100ef578063db36eb2e14610102578063f887ea401461013c578063fc32922f1461016357600080fd5b8063168c66b41461008257806351f00308146100a85780639b562f38146100c8575b600080fd5b6100956100903660046105f3565b6101a3565b6040519081526020015b60405180910390f35b6100bb6100b6366004610651565b6101c9565b60405161009f91906107f4565b6100db6100d63660046105c0565b610291565b60405162ffffff909116815260200161009f565b6100956100fd3660046105f3565b610397565b7f00000000000000000000000000000000000000000000000000000000000000005b6040516001600160a01b03909116815260200161009f565b6101247f000000000000000000000000000000000000000000000000000000000000000081565b61018a7f10f2a5091c0d87d755d0d7447d50bfb9ff0d95b3bfa45605046a581667ba9c7d81565b6040516001600160e01b0319909116815260200161009f565b6000806101b08484610291565b90506101be878787846103b2565b979650505050505050565b606060005b835181101561028a578251811461023a57818482815181106101f2576101f2610945565b602002602001015184838151811061020c5761020c610945565b6020026020010151604051602001610226939291906107a8565b604051602081830303815290604052610276565b8184828151811061024d5761024d610945565b6020026020010151604051602001610266929190610771565b6040516020818303038152906040525b9150806102828161091c565b9150506101ce565b5092915050565b604080516001600160a01b0383811660248084019190915283518084039091018152604490920183526020820180516001600160e01b03166310f2a50960e01b1790529151600092839182918716906102eb908590610755565b600060405180830381855afa9150503d8060008114610326576040519150601f19603f3d011682016040523d82523d6000602084013e61032b565b606091505b5091509150816103795760405162461bcd60e51b815260206004820152601560248201527419995948199bdc88185cdcd95d081b9bdd081cd95d605a1b604482015260640160405180910390fd5b8080602001905181019061038d9190610718565b9695505050505050565b6000806103a48484610291565b90506101be87878784610497565b60408051610100810182526001600160a01b038087168252858116602083015262ffffff84168284015230606083015242608083015260a0820185905260001960c0830152600060e083018190529251631b67c43360e31b81527f00000000000000000000000000000000000000000000000000000000000000009091169063db3e219890610445908490600401610827565b602060405180830381600087803b15801561045f57600080fd5b505af1158015610473573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061038d919061073c565b60408051610100810182526001600160a01b038087168252858116602083015262ffffff84168284015230606083015242608083015260a08201859052600160c0830152600060e08301819052925163414bf38960e01b81527f00000000000000000000000000000000000000000000000000000000000000009091169063414bf38990610445908490600401610827565b80356001600160a01b038116811461054057600080fd5b919050565b600082601f83011261055657600080fd5b8135602061056b610566836108c8565b610897565b80838252828201915082860187848660051b890101111561058b57600080fd5b60005b858110156105b35781356105a181610971565b8452928401929084019060010161058e565b5090979650505050505050565b600080604083850312156105d357600080fd5b6105dc83610529565b91506105ea60208401610529565b90509250929050565b600080600080600060a0868803121561060b57600080fd5b61061486610529565b945061062260208701610529565b93506040860135925061063760608701610529565b915061064560808701610529565b90509295509295909350565b6000806040838503121561066457600080fd5b823567ffffffffffffffff8082111561067c57600080fd5b818501915085601f83011261069057600080fd5b813560206106a0610566836108c8565b8083825282820191508286018a848660051b89010111156106c057600080fd5b600096505b848710156106ea576106d681610529565b8352600196909601959183019183016106c5565b509650508601359250508082111561070157600080fd5b5061070e85828601610545565b9150509250929050565b60006020828403121561072a57600080fd5b815161073581610971565b9392505050565b60006020828403121561074e57600080fd5b5051919050565b600082516107678184602087016108ec565b9190910192915050565b600083516107838184602088016108ec565b60609390931b6bffffffffffffffffffffffff19169190920190815260140192915050565b600084516107ba8184602089016108ec565b60609490941b6bffffffffffffffffffffffff19169190930190815260e89190911b6001600160e81b031916601482015260170192915050565b60208152600082518060208401526108138160408501602087016108ec565b601f01601f19169190910160400192915050565b6101008101610891828480516001600160a01b03908116835260208083015182169084015260408083015162ffffff16908401526060808301518216908401526080808301519084015260a0828101519084015260c0808301519084015260e09182015116910152565b92915050565b604051601f8201601f1916810167ffffffffffffffff811182821017156108c0576108c061095b565b604052919050565b600067ffffffffffffffff8211156108e2576108e261095b565b5060051b60200190565b60005b838110156109075781810151838201526020016108ef565b83811115610916576000848401525b50505050565b600060001982141561093e57634e487b7160e01b600052601160045260246000fd5b5060010190565b634e487b7160e01b600052603260045260246000fd5b634e487b7160e01b600052604160045260246000fd5b62ffffff8116811461098257600080fd5b5056fea2646970667358221220267a26542240f6d3a91efa495d72a1505035c3394dbd542788f3fe94c907409264736f6c63430008070033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "spenderToApprove()": {
+        "returns": {
+          "_0": "address that needs to have approval to spend tokens to execute a swap"
+        }
+      },
+      "swapAmountIn(address,address,uint256,address,address)": {
+        "details": "swaps `_amountIn` of `_tokenIn` for `_tokenOut`. It might require approvals.",
+        "returns": {
+          "amountOut": "amount of _tokenOut received"
+        }
+      },
+      "swapAmountOut(address,address,uint256,address,address)": {
+        "details": "swaps `_tokenIn` for `_amountOut` of  `_tokenOut`. It might require approvals",
+        "returns": {
+          "amountIn": "amount of _tokenIn spend"
+        }
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

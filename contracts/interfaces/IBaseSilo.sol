@@ -5,22 +5,6 @@ import "./IShareToken.sol";
 
 
 interface IBaseSilo {
-    event Deposit(address indexed asset, address indexed depositor, uint256 amount, bool collateralOnly);
-
-    event Withdraw(
-        address indexed asset,
-        address indexed depositor,
-        address indexed receiver,
-        uint256 amount,
-        bool collateralOnly
-    );
-
-    event Borrow(address indexed asset, address indexed user, uint256 amount);
-
-    event Repay(address indexed asset, address indexed user, uint256 amount);
-
-    event Liquidate(address indexed asset, address indexed _user, uint256 amountRepaid, uint256 seizedCollateral);
-
     struct AssetStorage {
         // Token that represents a share in totalDeposits of Silo
         IShareToken collateralToken;
@@ -45,6 +29,22 @@ interface IBaseSilo {
         // True if asset was removed from the protocol. If so, deposit and borrow functions are disabled for that asset
         bool removed;
     }
+
+    event Deposit(address indexed asset, address indexed depositor, uint256 amount, bool collateralOnly);
+
+    event Withdraw(
+        address indexed asset,
+        address indexed depositor,
+        address indexed receiver,
+        uint256 amount,
+        bool collateralOnly
+    );
+
+    event Borrow(address indexed asset, address indexed user, uint256 amount);
+
+    event Repay(address indexed asset, address indexed user, uint256 amount);
+
+    event Liquidate(address indexed asset, address indexed _user, uint256 amountRepaid, uint256 seizedCollateral);
 
     function getAssets() external view returns (address[] memory assets);
 
