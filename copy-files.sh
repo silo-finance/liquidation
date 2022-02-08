@@ -11,6 +11,7 @@ mkdir -p "contracts/interfaces"
 mkdir -p "contracts/lib"
 mkdir -p "deployments/kovan"
 mkdir -p "deployments/rinkeby"
+mkdir -p "deployments/goerli"
 
 
 cd ../silo-contracts/
@@ -21,6 +22,7 @@ cp ./LICENSE* ../liquidation/
 cp -R ./contracts/liquidation/* ../liquidation/contracts/liquidation/
 cp -R ./deployments/kovan/* ../liquidation/deployments/kovan/
 cp -R ./deployments/rinkeby/* ../liquidation/deployments/rinkeby/
+cp -R ./deployments/goerli/* ../liquidation/deployments/goerli/
 
 find ../liquidation/deployments/ -type f -name "Founding*" -depth -delete;
 find ../liquidation/deployments/ -type f -name "Funders*" -depth -delete;
@@ -49,5 +51,6 @@ cd -
 
 npx hardhat compile
 
+find ./artifacts/ -type f -name "*.dbg.json" -depth -delete;
 
 echo "DONE :)"
