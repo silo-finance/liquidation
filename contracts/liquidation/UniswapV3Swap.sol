@@ -3,16 +3,21 @@ pragma solidity 0.8.7;
 pragma abicoder v2;
 
 import "@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol";
+import "@uniswap/v3-core/contracts/interfaces/IUniswapV3Pool.sol";
 import "../interfaces/ISwapper.sol";
-import "../interfaces/IOracle.sol";
+import "../interfaces/IPriceProvider.sol";
 
-
+/// @dev UniswapV3Swap IS NOT PART OF THE PROTOCOL. SILO CREATED THIS TOOL, MOSTLY AS AN EXAMPLE.
+///         NOTE THAT SWAP DONE BY THIS CONTRACT MIGHT NOT BE OPTIMISED, WE ARE NOT USING SLIPPAGE AND YOU CAN LOSE
+///         MONEY BY USING IT.
 contract UniswapV3Swap is ISwapper {
-    bytes4 constant public ASSETS_FEES_SELECTOR = bytes4(keccak256("assetsFees(address)"));
+    bytes4 constant private _POOLS_SELECTOR = bytes4(keccak256("pools(address)"));
 
     ISwapRouter public immutable router;
 
     constructor (address _router) {
+        require(_router != address(0), "invalid router");
+
         router = ISwapRouter(_router);
     }
 
@@ -21,10 +26,10 @@ contract UniswapV3Swap is ISwapper {
         address _tokenIn,
         address _tokenOut,
         uint256 _amount,
-        address _siloOracle,
+        address _priceProvider,
         address _siloAsset
     ) external override returns (uint256 amountOut) {
-        uint24 fee = resolveFee(_siloOracle, _siloAsset);
+        uint24 fee = resolveFee(_priceProvider, _siloAsset);
         return _swapAmountIn(_tokenIn, _tokenOut, _amount, fee);
     }
 
@@ -33,10 +38,10 @@ contract UniswapV3Swap is ISwapper {
         address _tokenIn,
         address _tokenOut,
         uint256 _amountOut,
-        address _siloOracle,
+        address _priceProvider,
         address _siloAsset
     ) external override returns (uint256 amountIn) {
-        uint24 fee = resolveFee(_siloOracle, _siloAsset);
+        uint24 fee = resolveFee(_priceProvider, _siloAsset);
         return _swapAmountOut(_tokenIn, _tokenOut, _amountOut, fee);
     }
 
@@ -45,14 +50,15 @@ contract UniswapV3Swap is ISwapper {
         return address(router);
     }
 
-    function resolveFee(address _oracle, address _asset) public view returns (uint24 fee) {
-        bytes memory callData = abi.encodeWithSelector(ASSETS_FEES_SELECTOR, _asset);
+    function resolveFee(address _priceProvider, address _asset) public view returns (uint24 fee) {
+        bytes memory callData = abi.encodeWithSelector(_POOLS_SELECTOR, _asset);
 
         // solhint-disable-next-line avoid-low-level-calls
-        (bool success, bytes memory data) = _oracle.staticcall(callData);
-        require(success, "fee for asset not set");
+        (bool success, bytes memory data) = _priceProvider.staticcall(callData);
+        require(success, "pool for asset not set");
 
-        fee = abi.decode(data, (uint24));
+        IUniswapV3Pool pool = IUniswapV3Pool(abi.decode(data, (address)));
+        fee = pool.fee();
     }
 
     function pathToBytes(address[] memory path, uint24[] memory fees) public pure returns (bytes memory bytesPath) {

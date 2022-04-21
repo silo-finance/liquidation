@@ -33,18 +33,25 @@ find ../liquidation/deployments/ -type f -name "SiloSnap*" -depth -delete;
 find ../liquidation/deployments/ -type f -name "Time*" -depth -delete;
 find ../liquidation/deployments/ -type f -name "TreasuryVester*" -depth -delete;
 
-cp ./contracts/SiloLens.sol ../liquidation/contracts/
 cp ./contracts/lib/EasyMath.sol ../liquidation/contracts/lib/
+cp ./contracts/lib//ModelStats.sol ../liquidation/contracts/lib/
+cp ./contracts/lib/Ping.sol ../liquidation/contracts/lib/
+cp ./contracts/lib/Solvency.sol ../liquidation/contracts/lib/
 
-cp ./contracts/interfaces/IFlashLiquidationReceiver.sol ../liquidation/contracts/interfaces/
-cp ./contracts/interfaces/IFactory.sol ../liquidation/contracts/interfaces/
-cp ./contracts/interfaces/IOracle.sol ../liquidation/contracts/interfaces/
+cp ./contracts/Error.sol ../liquidation/contracts/
+cp ./contracts/SiloLens.sol ../liquidation/contracts/
+
 cp ./contracts/interfaces/IBaseSilo.sol ../liquidation/contracts/interfaces/
-cp ./contracts/interfaces/ISilo.sol ../liquidation/contracts/interfaces/
-cp ./contracts/interfaces/ISwapper.sol ../liquidation/contracts/interfaces/
-cp ./contracts/interfaces/IRepository.sol ../liquidation/contracts/interfaces/
+cp ./contracts/interfaces/IFlashLiquidationReceiver.sol ../liquidation/contracts/interfaces/
+cp ./contracts/interfaces/IInterestRateModel.sol ../liquidation/contracts/interfaces/
+cp ./contracts/interfaces/INotificationReceiver.sol ../liquidation/contracts/interfaces/
+cp ./contracts/interfaces/IPriceProvider.sol ../liquidation/contracts/interfaces/
+cp ./contracts/interfaces/IPriceProvidersRepository.sol ../liquidation/contracts/interfaces/
 cp ./contracts/interfaces/IShareToken.sol ../liquidation/contracts/interfaces/
-cp ./contracts/interfaces/ISiloOracleRepository.sol ../liquidation/contracts/interfaces/
+cp ./contracts/interfaces/ISilo.sol ../liquidation/contracts/interfaces/
+cp ./contracts/interfaces/ISiloFactory.sol ../liquidation/contracts/interfaces/
+cp ./contracts/interfaces/ISiloRepository.sol ../liquidation/contracts/interfaces/
+cp ./contracts/interfaces/ISwapper.sol ../liquidation/contracts/interfaces/
 cp ./contracts/interfaces/ITokensFactory.sol ../liquidation/contracts/interfaces/
 
 cd -

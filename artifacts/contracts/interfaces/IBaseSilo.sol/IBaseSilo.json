@@ -71,13 +71,13 @@
         {
           "indexed": true,
           "internalType": "address",
-          "name": "_user",
+          "name": "user",
           "type": "address"
         },
         {
           "indexed": false,
           "internalType": "uint256",
-          "name": "amountRepaid",
+          "name": "shareAmountRepaid",
           "type": "uint256"
         },
         {
@@ -193,26 +193,6 @@
               "internalType": "uint256",
               "name": "totalBorrowAmount",
               "type": "uint256"
-            },
-            {
-              "internalType": "uint256",
-              "name": "interestRateTimestamp",
-              "type": "uint256"
-            },
-            {
-              "internalType": "uint256",
-              "name": "protocolFees",
-              "type": "uint256"
-            },
-            {
-              "internalType": "uint256",
-              "name": "harvestedProtocolFees",
-              "type": "uint256"
-            },
-            {
-              "internalType": "bool",
-              "name": "removed",
-              "type": "bool"
             }
           ],
           "internalType": "struct IBaseSilo.AssetStorage",
@@ -242,64 +222,6 @@
           "internalType": "bool",
           "name": "",
           "type": "bool"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "_user",
-          "type": "address"
-        },
-        {
-          "internalType": "address",
-          "name": "_asset",
-          "type": "address"
-        },
-        {
-          "internalType": "uint256",
-          "name": "_assetPrice",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "_assetDecimals",
-          "type": "uint256"
-        }
-      ],
-      "name": "calculateCollateralValue",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "_user",
-          "type": "address"
-        },
-        {
-          "internalType": "bool",
-          "name": "_useMaximumLTV",
-          "type": "bool"
-        }
-      ],
-      "name": "calculateUserLTV",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
         }
       ],
       "stateMutability": "view",
@@ -343,19 +265,50 @@
       "type": "function"
     },
     {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "_user",
-          "type": "address"
-        }
-      ],
-      "name": "getLTV",
+      "inputs": [],
+      "name": "getAssetsWithState",
       "outputs": [
         {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
+          "internalType": "address[]",
+          "name": "assets",
+          "type": "address[]"
+        },
+        {
+          "components": [
+            {
+              "internalType": "contract IShareToken",
+              "name": "collateralToken",
+              "type": "address"
+            },
+            {
+              "internalType": "contract IShareToken",
+              "name": "collateralOnlyToken",
+              "type": "address"
+            },
+            {
+              "internalType": "contract IShareToken",
+              "name": "debtToken",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "totalDeposits",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "collateralOnlyDeposits",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "totalBorrowAmount",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct IBaseSilo.AssetStorage[]",
+          "name": "assetsStorage",
+          "type": "tuple[]"
         }
       ],
       "stateMutability": "view",
@@ -369,31 +322,34 @@
           "type": "address"
         }
       ],
-      "name": "getUtilization",
+      "name": "interestData",
       "outputs": [
         {
-          "internalType": "uint256",
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "harvestedProtocolFees",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "protocolFees",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint64",
+              "name": "interestRateTimestamp",
+              "type": "uint64"
+            },
+            {
+              "internalType": "enum IBaseSilo.AssetStatus",
+              "name": "status",
+              "type": "uint8"
+            }
+          ],
+          "internalType": "struct IBaseSilo.AssetInterestData",
           "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "_asset",
-          "type": "address"
-        }
-      ],
-      "name": "interestRateTimestamp",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
+          "type": "tuple"
         }
       ],
       "stateMutability": "view",
@@ -413,6 +369,62 @@
           "internalType": "bool",
           "name": "",
           "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "siloRepository",
+      "outputs": [
+        {
+          "internalType": "contract ISiloRepository",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "syncBridgeAssets",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_asset",
+          "type": "address"
+        }
+      ],
+      "name": "utilizationData",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "totalDeposits",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "totalBorrowAmount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint64",
+              "name": "interestRateTimestamp",
+              "type": "uint64"
+            }
+          ],
+          "internalType": "struct IBaseSilo.UtilizationData",
+          "name": "data",
+          "type": "tuple"
         }
       ],
       "stateMutability": "view",

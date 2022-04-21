@@ -35,7 +35,7 @@
         },
         {
           "internalType": "address",
-          "name": "_siloOracle",
+          "name": "_priceProvider",
           "type": "address"
         },
         {
@@ -74,7 +74,7 @@
         },
         {
           "internalType": "address",
-          "name": "_siloOracle",
+          "name": "_priceProvider",
           "type": "address"
         },
         {
