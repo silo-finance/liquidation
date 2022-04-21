@@ -5,33 +5,36 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 import "../SiloLens.sol";
-import "../interfaces/IFactory.sol";
-import "../interfaces/IOracle.sol";
+import "../interfaces/ISiloFactory.sol";
+import "../interfaces/IPriceProvider.sol";
 import "../interfaces/ISwapper.sol";
-import "../interfaces/IRepository.sol";
-import "../interfaces/ISiloOracleRepository.sol";
+import "../interfaces/ISiloRepository.sol";
+import "../interfaces/IPriceProvidersRepository.sol";
+
+import "../lib/Ping.sol";
 
 interface IWrappedNativeToken is IERC20 {
     function deposit() external payable;
     function withdraw(uint256 amount) external;
 }
 
-/// @dev see https://github.com/silo-finance/liquidation#readme for details how liquidation process should looks like
+/// @dev LiquidationHelper IS NOT PART OF THE PROTOCOL. SILO CREATED THIS TOOL, MOSTLY AS AN EXAMPLE.
+///         see https://github.com/silo-finance/liquidation#readme for details how liquidation process should look like
 contract LiquidationHelper is IFlashLiquidationReceiver, Ownable {
-    bytes4 constant public SWAP_AMOUNT_IN_SELECTOR =
+    bytes4 constant private _SWAP_AMOUNT_IN_SELECTOR =
         bytes4(keccak256("swapAmountIn(address,address,uint256,address,address)"));
 
-    bytes4 constant public SWAP_AMOUNT_OUT_SELECTOR =
+    bytes4 constant private _SWAP_AMOUNT_OUT_SELECTOR =
         bytes4(keccak256("swapAmountOut(address,address,uint256,address,address)"));
 
-    IRepository public immutable repository;
+    ISiloRepository public immutable siloRepository;
     SiloLens public immutable lens;
     IERC20 public immutable quoteToken;
 
     mapping(address => uint256) public earnings;
-    mapping(IOracle => ISwapper) public swappers;
+    mapping(IPriceProvider => ISwapper) public swappers;
 
-    IOracle[] public oraclesWithSwapOption;
+    IPriceProvider[] public priceProvidersWithSwapOption;
 
     event LiquidationBalance(
         address user,
@@ -43,24 +46,25 @@ contract LiquidationHelper is IFlashLiquidationReceiver, Ownable {
     constructor (
         address _repository,
         address _lens,
-        IOracle[] memory _oraclesWithSwapOption,
+        IPriceProvider[] memory _priceProvidersWithSwapOption,
         ISwapper[] memory _swappers
     ) {
-        require(_repository != address(0), "empty repository");
-        require(_lens != address(0), "empty lens");
-        require(_swappers.length == _oraclesWithSwapOption.length, "swappers != oracles");
+        require(Ping.pong(_repository, ISiloRepository.siloRepositoryPing.selector), "invalid _repository");
+        require(Ping.pong(_lens, SiloLens.lensPing.selector), "invalid _lens");
 
-        repository = IRepository(_repository);
+        require(_swappers.length == _priceProvidersWithSwapOption.length, "swappers != providers");
+
+        siloRepository = ISiloRepository(_repository);
         lens = SiloLens(_lens);
 
         for (uint256 i = 0; i < _swappers.length; i++) {
-            swappers[_oraclesWithSwapOption[i]] = _swappers[i];
+            swappers[_priceProvidersWithSwapOption[i]] = _swappers[i];
         }
 
-        oraclesWithSwapOption = _oraclesWithSwapOption;
+        priceProvidersWithSwapOption = _priceProvidersWithSwapOption;
 
-        ISiloOracleRepository oracleRepo = ISiloOracleRepository(IRepository(_repository).oracle());
-        quoteToken = IERC20(oracleRepo.quoteToken());
+        IPriceProvidersRepository priceProviderRepo = ISiloRepository(_repository).priceProvidersRepository();
+        quoteToken = IERC20(priceProviderRepo.quoteToken());
     }
 
     function withdraw() external {
@@ -80,12 +84,12 @@ contract LiquidationHelper is IFlashLiquidationReceiver, Ownable {
         payable(msg.sender).transfer(amount);
     }
 
-    function executeLiquidation(address[] memory _users, ISilo _silo) external {
-        uint256 gasStart = gasleft();
-        _silo.flashLiquidate(_users, address(this), IFlashLiquidationReceiver(this), abi.encode(gasStart));
+    function executeLiquidation(address[] calldata _users, ISilo _silo) external {
+        uint256 gasStart = 29_001_691; // eg: gasleft();
+        _silo.flashLiquidate(_users, abi.encode(gasStart));
     }
 
-    function setSwapper(IOracle _oracle, ISwapper _swapper) external onlyOwner {
+    function setSwapper(IPriceProvider _oracle, ISwapper _swapper) external onlyOwner {
         swappers[_oracle] = _swapper;
     }
 
@@ -103,14 +107,14 @@ contract LiquidationHelper is IFlashLiquidationReceiver, Ownable {
         uint256 gasStart = abi.decode(_flashReceiverData, (uint256));
 
         ISilo silo = ISilo(msg.sender);
-        require(repository.isSilo(address(silo)), "not a Silo");
+        require(siloRepository.isSilo(address(silo)), "not a Silo");
 
         uint256 quoteAmountFromCollaterals;
 
         // swap all for quote token
         unchecked {
             for (uint256 i = 0; i < _assets.length; i++) {
-                quoteAmountFromCollaterals += swapForQuote(_assets[i], _receivedCollaterals[i]);
+                quoteAmountFromCollaterals += _swapForQuote(_assets[i], _receivedCollaterals[i]);
             }
         }
 
@@ -121,11 +125,17 @@ contract LiquidationHelper is IFlashLiquidationReceiver, Ownable {
             if (_shareAmountsToRepaid[i] == 0) continue;
 
             unchecked {
-                quoteSpendOnRepay += swapForAsset(_assets[i], _shareAmountsToRepaid[i]);
+                quoteSpendOnRepay += _swapForAsset(_assets[i], _shareAmountsToRepaid[i]);
             }
 
             IERC20(_assets[i]).approve(address(silo), _shareAmountsToRepaid[i]);
             silo.repayFor(_assets[i], _user, _shareAmountsToRepaid[i]);
+
+            // DEFLATIONARY TOKENS ARE NOT SUPPORTED
+            // we are not using lower limits for swaps so we may not get enough tokens to do full repay
+            // our assumption here is that `_shareAmountsToRepaid[i]` is total amount to repay the full debt
+            // if after repay user has no debt in this asset, the swap is acceptable
+            require(silo.assetStorage(_assets[i]).debtToken.balanceOf(_user) == 0, "repay failed");
         }
 
         int256 quoteLeftAfterRepay = int256(quoteAmountFromCollaterals) - int256(quoteSpendOnRepay);
@@ -135,12 +145,13 @@ contract LiquidationHelper is IFlashLiquidationReceiver, Ownable {
             ? earnings[_owner] - uint256(-1 * quoteLeftAfterRepay)
             : earnings[_owner] + uint256(quoteLeftAfterRepay);
 
-        uint256 gasSpend = gasleft() - gasStart - 21000;
+        uint256 gasSpend = gasStart - gasleft() - 21000;
+
         emit LiquidationBalance(_user, quoteAmountFromCollaterals, quoteLeftAfterRepay, gasSpend);
     }
 
-    function oraclesWithSwapOptionCount() external view returns (uint256) {
-        return oraclesWithSwapOption.length;
+    function priceProvidersWithSwapOptionCount() external view returns (uint256) {
+        return priceProvidersWithSwapOption.length;
     }
 
     function checkSolvency(address[] memory _users, ISilo[] memory _silos) external view returns (bool[] memory) {
@@ -165,19 +176,30 @@ contract LiquidationHelper is IFlashLiquidationReceiver, Ownable {
         return hasDebt;
     }
 
-    function swapForQuote(address _asset, uint256 _amount) public returns (uint256) {
+    function findPriceProvider(address _asset) public view returns (IPriceProvider) {
+        IPriceProvider[] memory providers = priceProvidersWithSwapOption;
+
+        for (uint256 i = 0; i < providers.length; i++) {
+            IPriceProvider provider = providers[i];
+            if (provider.assetSupported(_asset)) return provider;
+        }
+
+        revert("provider not found");
+    }
+
+    function _swapForQuote(address _asset, uint256 _amount) internal returns (uint256) {
         if (_amount == 0 || _asset == address(quoteToken)) return _amount;
 
-        IOracle oracle = findBestOracle(_asset);
-        ISwapper swapper = swappers[oracle];
+        IPriceProvider priceProvider = findPriceProvider(_asset);
+        ISwapper swapper = swappers[priceProvider];
 
         bytes memory callData = abi.encodeWithSelector(
-            SWAP_AMOUNT_IN_SELECTOR,
-                _asset,
-                quoteToken,
-                _amount,
-                oracle,
-                _asset
+            _SWAP_AMOUNT_IN_SELECTOR,
+            _asset,
+            quoteToken,
+            _amount,
+            priceProvider,
+            _asset
         );
 
         // no need for safe approval, because we always using 100%
@@ -193,20 +215,21 @@ contract LiquidationHelper is IFlashLiquidationReceiver, Ownable {
     /// @param _asset address
     /// @param _amount exact amount OUT, what we want to receive
     /// @return amount of quote token used for swap
-    function swapForAsset(address _asset, uint256 _amount) public returns (uint256) {
+    function _swapForAsset(address _asset, uint256 _amount) internal returns (uint256) {
         if (_amount == 0 || address(quoteToken) == _asset) return _amount;
 
-        IOracle oracle = findBestOracle(_asset);
-        ISwapper swapper = swappers[oracle];
+        IPriceProvider priceProvider = findPriceProvider(_asset);
+        ISwapper swapper = swappers[priceProvider];
 
         bytes memory callData = abi.encodeWithSelector(
-            SWAP_AMOUNT_OUT_SELECTOR,
+            _SWAP_AMOUNT_OUT_SELECTOR,
             quoteToken,
             _asset,
             _amount,
-            oracle,
+            priceProvider,
             _asset
         );
+
 
         address spender = swapper.spenderToApprove();
         IERC20(quoteToken).approve(spender, type(uint256).max);
@@ -217,23 +240,5 @@ contract LiquidationHelper is IFlashLiquidationReceiver, Ownable {
         IERC20(quoteToken).approve(spender, 0);
 
         return abi.decode(data, (uint256));
-    }
-
-    function findBestOracle(address _asset) public view returns (IOracle) {
-        IOracle[] memory oracles = oraclesWithSwapOption;
-        uint256 maxLiquidity;
-        IOracle bestOracle;
-
-        for (uint256 i = 0; i < oracles.length; i++) {
-            IOracle oracle = oracles[i];
-            uint256 quoteLiquidity = oracle.getQuoteLiquidityRaw(_asset);
-
-            if (quoteLiquidity > maxLiquidity) {
-                bestOracle = oracle;
-                maxLiquidity = quoteLiquidity;
-            }
-        }
-
-        return bestOracle;
     }
 }

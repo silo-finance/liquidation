@@ -8,7 +8,7 @@ interface ISwapper {
         address _tokenIn,
         address _tokenOut,
         uint256 _amountIn,
-        address _siloOracle,
+        address _priceProvider,
         address _siloAsset
     ) external returns (uint256 amountOut);
 
@@ -18,7 +18,7 @@ interface ISwapper {
         address _tokenIn,
         address _tokenOut,
         uint256 _amountOut,
-        address _siloOracle,
+        address _priceProvider,
         address _siloAsset
     ) external returns (uint256 amountIn);
 

@@ -6,7 +6,9 @@ import "@balancer-labs/v2-vault/contracts/interfaces/IVault.sol";
 import "@balancer-labs/v2-vault/contracts/interfaces/IAsset.sol";
 import "../interfaces/ISwapper.sol";
 
-
+/// @dev BalancerV2Swap IS NOT PART OF THE PROTOCOL. SILO CREATED THIS TOOL, MOSTLY AS AN EXAMPLE.
+///         NOTE THAT SWAP DONE BY THIS CONTRACT MIGHT BE NOT OPTIMISED, WE ARE NOT USING SLIPPAGE AND YOU CAN LOSE
+///         MONEY BY USING IT.
 contract BalancerV2Swap is ISwapper {
     struct BalancerPool {
         bytes32 poolId;
@@ -14,11 +16,13 @@ contract BalancerV2Swap is ISwapper {
         bool token0isAsset;
     }
 
-    bytes4 constant public ASSETS_POOLS_SELECTOR = bytes4(keccak256("assetsPools(address)"));
+    bytes4 constant private _ASSETS_POOLS_SELECTOR = bytes4(keccak256("assetsPools(address)"));
 
     IVault public immutable vault;
 
     constructor (address _balancerVault) {
+        require(_balancerVault != address(0), "invalid vault");
+
         vault = IVault(_balancerVault);
     }
 
@@ -52,7 +56,7 @@ contract BalancerV2Swap is ISwapper {
     }
 
     function resolvePoolId(address _oracle, address _asset) public view returns (bytes32 poolId) {
-        bytes memory callData = abi.encodeWithSelector(ASSETS_POOLS_SELECTOR, _asset);
+        bytes memory callData = abi.encodeWithSelector(_ASSETS_POOLS_SELECTOR, _asset);
 
         // solhint-disable-next-line avoid-low-level-calls
         (bool success, bytes memory data) = _oracle.staticcall(callData);
