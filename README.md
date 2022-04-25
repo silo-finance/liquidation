@@ -1,15 +1,28 @@
 # Silo Liquidation Helper
 
-Liquidation Helper contract + necessary ABIs to perform liquidation
+Liquidation Helper contract + necessary ABIs to perform liquidation.
 
 LiquidationHelper is not part of the protocol. Silo created this tool, mostly as an example.
 
-## Contract addresses
+## Contract
 
+### Addresses
 Check `deployments/` directory for deployed contract addresses.  
-You can find there also ABIs of the contracts including events definitions.
+
+### Artifacts
+Check `artifacts/` directory. 
+You can find there ABIs of the contracts including events definitions.
 
 Necessary events can be found also in `contracts/interfaces`.
+
+### Math/code for solvency check
+- `contracts/UserSolvencyCheck.sol` - contract with `isSolvent` method. This is exact method every silo uses
+  to check if user is solvent. In provided example `LiquidationHelper.checkSolvency` you can see how this method is 
+  used.  
+  In case you need all calculations to be done in BE (for better performance) you can simply implement it, this will be 
+  your starting point.
+- `contracts/SiloLens.sol` - contract with view methods for each silo
+- `contracts/lib/Solvency.sol` - library with all the math used to check, if user is solvent
 
 ## Example scenario for liquidation bot
 

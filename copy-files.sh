@@ -40,6 +40,7 @@ cp ./contracts/lib/Solvency.sol ../liquidation/contracts/lib/
 
 cp ./contracts/Error.sol ../liquidation/contracts/
 cp ./contracts/SiloLens.sol ../liquidation/contracts/
+cp ./contracts/UserSolvencyCheck.sol ../liquidation/contracts/
 
 cp ./contracts/interfaces/IBaseSilo.sol ../liquidation/contracts/interfaces/
 cp ./contracts/interfaces/IFlashLiquidationReceiver.sol ../liquidation/contracts/interfaces/
